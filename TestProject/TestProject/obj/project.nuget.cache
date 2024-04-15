@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Yu86SffpRg0tFQBSvvl/yKLxK/dm+mZvy2GJiINEDxj4PCsk9gtEcu2C2b3yrKCb4uAceLjEcrJtzKyyUr6Wdg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\brady\\source\\StardewMods\\TestProject\\TestProject\\Sound.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\brady\\.nuget\\packages\\pathoschild.stardew.modbuildconfig\\4.1.1\\pathoschild.stardew.modbuildconfig.4.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
