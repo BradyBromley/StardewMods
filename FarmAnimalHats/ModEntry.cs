@@ -5,7 +5,7 @@ using StardewModdingAPI.Events;
 using StardewModdingAPI.Utilities;
 using StardewValley;
 
-namespace Sound
+namespace FarmAnimalHats
 {
     public class ModEntry : Mod
     {
@@ -37,5 +37,5 @@ namespace Sound
         }
     }
 
-    
+
 }

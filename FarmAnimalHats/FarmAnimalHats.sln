@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sound", "TestProject\Sound.csproj", "{625413A5-89DE-434E-B83A-F6BC30DBE5B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmAnimalHats", "FarmAnimalHats.csproj", "{12C1776D-C7F8-434F-9BEE-3C2DFEE033BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{625413A5-89DE-434E-B83A-F6BC30DBE5B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{625413A5-89DE-434E-B83A-F6BC30DBE5B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{625413A5-89DE-434E-B83A-F6BC30DBE5B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{625413A5-89DE-434E-B83A-F6BC30DBE5B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12C1776D-C7F8-434F-9BEE-3C2DFEE033BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12C1776D-C7F8-434F-9BEE-3C2DFEE033BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12C1776D-C7F8-434F-9BEE-3C2DFEE033BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12C1776D-C7F8-434F-9BEE-3C2DFEE033BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {C1547ABB-EF88-4262-B6E4-2E6B156C9EA3}
+		SolutionGuid = {373EC556-0693-4D68-B9C5-CFADC89B513F}
 	EndGlobalSection
 EndGlobal
