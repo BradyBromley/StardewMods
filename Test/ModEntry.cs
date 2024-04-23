@@ -5,7 +5,7 @@ using StardewModdingAPI.Events;
 using StardewModdingAPI.Utilities;
 using StardewValley;
 
-namespace FarmAnimalHats
+namespace Test
 {
     public class ModEntry : Mod
     {

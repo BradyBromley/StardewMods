@@ -1,10 +1,10 @@
 {
-  "Name": "FarmAnimalHats",
+  "Name": "Test",
   "Author": "Brady Bromley",
   "Version": "1.0.0",
   "Description": "Make a sound on button press",
-  "UniqueID": "BradyBromley.FarmAnimalHats",
-  "EntryDll": "FarmAnimalHats.dll",
+  "UniqueID": "BradyBromley.Test",
+  "EntryDll": "Test.dll",
   "MinimumApiVersion": "3.0.0",
   "UpdateKeys": []
 }
