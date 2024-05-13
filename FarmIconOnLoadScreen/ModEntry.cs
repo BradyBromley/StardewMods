@@ -19,6 +19,11 @@ namespace FarmIconOnLoadScreen
                original: AccessTools.Method(typeof(StardewValley.Menus.LoadGameMenu.SaveFileSlot), nameof(StardewValley.Menus.LoadGameMenu.SaveFileSlot.Draw)),
                postfix: new HarmonyMethod(typeof(FarmIconPatch), nameof(FarmIconPatch.DrawFarmIconPostfix))
             );
+
+            harmony.Patch(
+               original: AccessTools.Method(typeof(StardewValley.Menus.TitleMenu), nameof(StardewValley.Menus.TitleMenu.createdNewCharacter)),
+               postfix: new HarmonyMethod(typeof(FarmIconPatch), nameof(FarmIconPatch.SaveFarmTypePostfix))
+            );
         }
     }
 

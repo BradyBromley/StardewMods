@@ -32,7 +32,6 @@ namespace Test
                 return;
             }
 
-            this.Monitor.Log($"{Game1.player.Name} pressed {e.Button}.", LogLevel.Debug);
             Game1.playSound("camel");
         }
     }
