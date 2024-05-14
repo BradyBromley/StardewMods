@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using StardewModdingAPI;
+using StardewModdingAPI.Events;
 using StardewValley;
 using StardewValley.Menus;
 using StardewValley.GameData;
@@ -20,26 +21,6 @@ namespace FarmIconOnLoadScreen
         internal static void Initialize(Mod mod)
         {
             Monitor = mod.Monitor;
-        }
-
-        // Save the farm type in farmer modData after creating a farmer so that it can be easily accessed later
-        internal static void SaveFarmTypePostfix(TitleMenu __instance)
-        {
-            try
-            {
-                StardewValley.Mods.ModDataDictionary modData = Game1.player.modData;
-                modData.Add("FarmIconOnLoadScreen", (Game1.whichFarm).ToString());
-                if (Game1.whichFarm == 7)
-                {
-                    ModFarmType farmType = Game1.whichModFarm;
-                    modData.Add("ModFarmIconOnLoadScreen", farmType.IconTexture);
-                }
-            }
-            catch (Exception e)
-            {
-                Monitor.Log($"Failed in {nameof(SaveFarmTypePostfix)}:\n{e}", LogLevel.Error);
-            }
-
         }
 
         // Draw the farm type on the load screen
@@ -102,9 +83,9 @@ namespace FarmIconOnLoadScreen
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                Monitor.Log($"Failed in {nameof(DrawFarmIconPostfix)}:\n{e}", LogLevel.Error);
+                Monitor.Log($"Failed in {nameof(DrawFarmIconPostfix)}:\n{ex}", LogLevel.Error);
             }
             
         }
