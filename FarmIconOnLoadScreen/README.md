@@ -10,6 +10,10 @@ This is an open source mod for Stardew Valley that displays the farm type on sav
 2. Download this mod and unzip it into StardewValley/Mods
 3. Run the game using SMAPI
 
+## Mirrors
+[Nexus Mods Page](https://www.nexusmods.com/stardewvalley/mods/24344)
+
 ## Releases
 ### 1.0.0
 - Initial upload
+
