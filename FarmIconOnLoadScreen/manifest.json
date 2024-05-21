@@ -2,7 +2,7 @@
   "Name": "FarmIconOnLoadScreen",
   "Author": "Brady Bromley",
   "Version": "1.0.0",
-  "Description": "Make a sound on button press",
+  "Description": "Show the farm icon associated with each save file",
   "UniqueID": "BradyBromley.FarmIconOnLoadScreen",
   "EntryDll": "FarmIconOnLoadScreen.dll",
   "MinimumApiVersion": "3.0.0",

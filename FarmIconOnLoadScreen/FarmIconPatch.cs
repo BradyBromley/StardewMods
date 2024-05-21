@@ -10,6 +10,7 @@ using StardewModdingAPI.Events;
 using StardewValley;
 using StardewValley.Menus;
 using StardewValley.GameData;
+using System.Runtime.CompilerServices;
 
 namespace FarmIconOnLoadScreen
 {
@@ -28,7 +29,23 @@ namespace FarmIconOnLoadScreen
         {
             try
             {
-                Vector2 vector = new Vector2((TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.X + 8, (TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.Y + 78);
+                // If you are joining a multiplayer game, don't display a farm icon
+                if (__instance.Farmer.slotName == null)
+                {
+                    return;
+                }
+
+                // The location of the farm icon changes depending on if you are loading a singleplayer farm or hosting a farm
+                Vector2 vector;
+                if (__instance.GetType().Name == "SaveFileSlot")
+                {
+                    // Singleplayer
+                    vector = new Vector2((TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.X + 8, (TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.Y + 78);
+                } else
+                {
+                    // Multiplayer Host
+                    vector = new Vector2((TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.X + 1048, (TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.Y + 16);
+                }
 
                 StardewValley.Mods.ModDataDictionary modData = __instance.Farmer.modData;
                 if (modData.ContainsKey("FarmIconOnLoadScreen"))
@@ -70,9 +87,20 @@ namespace FarmIconOnLoadScreen
                             case 7:
                                 if (modData["ModFarmIconOnLoadScreen"] != null)
                                 {
-                                    // Mod Farm
-                                    Texture2D modFarmTexture = Game1.content.Load<Texture2D>(modData["ModFarmIconOnLoadScreen"]);
-                                    b.Draw(modFarmTexture, vector, new Rectangle(0, 0, 22, 20), Color.White, 0f, Vector2.Zero, 4f, SpriteEffects.None, 0.89f);
+                                    try
+                                    {
+                                        // Mod Farm
+                                        Texture2D modFarmTexture = Game1.content.Load<Texture2D>(modData["ModFarmIconOnLoadScreen"]);
+                                        b.Draw(modFarmTexture, vector, new Rectangle(0, 0, 22, 20), Color.White, 0f, Vector2.Zero, 4f, SpriteEffects.None, 0.89f);
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        // If the mod farm doesn't load, draw the Standard farm with an X over it
+                                        b.Draw(Game1.mouseCursors, vector, new Rectangle(0, 324, 22, 20), Color.White, 0f, Vector2.Zero, 4f, SpriteEffects.None, 0.89f);
+                                        b.Draw(Game1.mouseCursors, vector, new Rectangle(265, 468, 20, 20), Color.White, 0f, Vector2.Zero, 4f, SpriteEffects.None, 0.89f);
+                                        Monitor.Log($"Something went wrong. Please ensure that custom farm mods are properly installed.", LogLevel.Error);
+                                    }
+
                                 } else
                                 {
                                     // Meadowlands
