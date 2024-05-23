@@ -14,6 +14,9 @@ This is an open source mod for Stardew Valley that displays the farm type on sav
 [Nexus Mods Page](https://www.nexusmods.com/stardewvalley/mods/24344)
 
 ## Releases
+### 1.0.1
+- Fixed issue with farm type key being added to modData after every save instead of only once
+
 ### 1.0.0
 - Initial upload
 
