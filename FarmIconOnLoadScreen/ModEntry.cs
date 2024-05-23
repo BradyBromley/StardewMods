@@ -31,8 +31,12 @@ namespace FarmIconOnLoadScreen
             try
             {
                 StardewValley.Mods.ModDataDictionary modData = Game1.player.modData;
-                modData.Add("FarmIconOnLoadScreen", (Game1.whichFarm).ToString());
-                if (Game1.whichFarm == 7)
+                if (!modData.ContainsKey("FarmIconOnLoadScreen"))
+                {
+                    modData.Add("FarmIconOnLoadScreen", (Game1.whichFarm).ToString());
+                }
+                
+                if ((Game1.whichFarm == 7) && (!modData.ContainsKey("ModFarmIconOnLoadScreen")))
                 {
                     ModFarmType farmType = Game1.whichModFarm;
                     modData.Add("ModFarmIconOnLoadScreen", farmType.IconTexture);
