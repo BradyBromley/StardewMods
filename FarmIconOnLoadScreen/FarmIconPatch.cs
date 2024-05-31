@@ -37,36 +37,41 @@ namespace FarmIconOnLoadScreen
                     return;
                 }
 
+                // Setup the icon bounds, which are different for small and large icons
                 Single scale;
-                float singleplayerPadX, singleplayerPadY, hostPadX, hostPadY;
+                int width, height;
+                float singleplayerX, singleplayerY, hostX, hostY;
                 if (Config.SmallIcons)
                 {
                     scale = 3f;
-                    singleplayerPadX = 20;
-                    singleplayerPadY = 90;
-                    hostPadX = 1060;
-                    hostPadY = 28;
+                    singleplayerX = (TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.X + 20;
+                    singleplayerY = (TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.Y + 90;
+                    hostX = (TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.X + 1060;
+                    hostY = (TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.Y + 28;
                 } else
                 {
                     scale = 4f;
-                    singleplayerPadX = 8;
-                    singleplayerPadY = 78;
-                    hostPadX = 1048;
-                    hostPadY = 16;
+                    singleplayerX = (TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.X + 8;
+                    singleplayerY = (TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.Y + 78;
+                    hostX = (TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.X + 1048;
+                    hostY = (TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.Y + 16;
                 }
+                width = 22 * (int)scale;
+                height = 20 * (int)scale;
 
                 // The location of the farm icon changes depending on if you are loading a singleplayer farm or hosting a farm
-                Vector2 vector;
+                Rectangle bounds;
                 if (__instance.GetType().Name == "SaveFileSlot")
                 {
                     // Singleplayer
-                    vector = new Vector2((TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.X + singleplayerPadX, (TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.Y + singleplayerPadY);
+                    bounds = new Rectangle((int)singleplayerX, (int)singleplayerY, width, height);
                 } else
                 {
                     // Multiplayer Host
-                    vector = new Vector2((TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.X + hostPadX, (TitleMenu.subMenu as LoadGameMenu).slotButtons[i].bounds.Y + hostPadY);
+                    bounds = new Rectangle((int)hostX, (int)hostY, width, height);
                 }
 
+                string hoverText = "";
                 StardewValley.Mods.ModDataDictionary modData = __instance.Farmer.modData;
                 if (modData.ContainsKey("FarmIconOnLoadScreen"))
                 {
@@ -77,64 +82,73 @@ namespace FarmIconOnLoadScreen
                         {
                             case 0:
                                 // Standard
-                                b.Draw(Game1.mouseCursors, vector, new Rectangle(0, 324, 22, 20), Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0.89f);
+                                b.Draw(Game1.mouseCursors, bounds, new Rectangle(0, 324, 22, 20), Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.89f);
                                 break;
                             case 1:
                                 // Riverland
-                                b.Draw(Game1.mouseCursors, vector, new Rectangle(22, 324, 22, 20), Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0.89f);
+                                b.Draw(Game1.mouseCursors, bounds, new Rectangle(22, 324, 22, 20), Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.89f);
                                 break;
                             case 2:
                                 // Forest
-                                b.Draw(Game1.mouseCursors, vector, new Rectangle(44, 324, 22, 20), Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0.89f);
+                                b.Draw(Game1.mouseCursors, bounds, new Rectangle(44, 324, 22, 20), Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.89f);
                                 break;
                             case 3:
                                 // Hills
-                                b.Draw(Game1.mouseCursors, vector, new Rectangle(66, 324, 22, 20), Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0.89f);
+                                b.Draw(Game1.mouseCursors, bounds, new Rectangle(66, 324, 22, 20), Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.89f);
                                 break;
                             case 4:
                                 // Wilderness
-                                b.Draw(Game1.mouseCursors, vector, new Rectangle(88, 324, 22, 20), Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0.89f);
+                                b.Draw(Game1.mouseCursors, bounds, new Rectangle(88, 324, 22, 20), Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.89f);
                                 break;
                             case 5:
                                 // Four Corners
-                                b.Draw(Game1.mouseCursors, vector, new Rectangle(0, 345, 22, 20), Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0.89f);
+                                b.Draw(Game1.mouseCursors, bounds, new Rectangle(0, 345, 22, 20), Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.89f);
                                 break;
                             case 6:
                                 // Beach
-                                b.Draw(Game1.mouseCursors, vector, new Rectangle(22, 345, 22, 20), Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0.89f);
+                                b.Draw(Game1.mouseCursors, bounds, new Rectangle(22, 345, 22, 20), Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.89f);
                                 break;
                             case 7:
                                 if (modData["ModFarmIconOnLoadScreen"] != null)
                                 {
                                     try
                                     {
-                                        // Mod Farm
+                                        // Meadowlands and Mod Farms
                                         Texture2D modFarmTexture = Game1.content.Load<Texture2D>(modData["ModFarmIconOnLoadScreen"]);
-                                        b.Draw(modFarmTexture, vector, new Rectangle(0, 0, 22, 20), Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0.89f);
+                                        b.Draw(modFarmTexture, bounds, new Rectangle(0, 0, 22, 20), Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.89f);
                                     }
                                     catch (Exception ex)
                                     {
                                         // If the mod farm doesn't load, draw the Standard farm with an X over it
-                                        b.Draw(Game1.mouseCursors, vector, new Rectangle(0, 324, 22, 20), Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0.89f);
-                                        b.Draw(Game1.mouseCursors, vector, new Rectangle(265, 468, 20, 20), Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0.89f);
+                                        b.Draw(Game1.mouseCursors, bounds, new Rectangle(0, 324, 22, 20), Color.White, 0f, Vector2.Zero, SpriteEffects.None, 0.89f);
+                                        b.Draw(Game1.mouseCursors, new Vector2(bounds.X, bounds.Y), new Rectangle(265, 468, 20, 20), Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0.89f);
                                         Monitor.Log($"Something went wrong. Please ensure that custom farm mods are properly installed.", LogLevel.Error);
                                     }
-
-                                } else
-                                {
-                                    // Meadowlands
-                                    b.Draw(Game1.mouseCursors, vector, new Rectangle(1, 324, 22, 20), Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, 0.89f);
                                 }
                                 break;
                         }
+
+                        if (modData.ContainsKey("FarmIconNameOnLoadScreen") && (modData["FarmIconNameOnLoadScreen"] != null))
+                        {
+                            hoverText = modData["FarmIconNameOnLoadScreen"];
+                        }
+                        else
+                        {
+                            hoverText = "Farm name not found";
+                        }
                     }
+                }
+
+                // Draw the hoverText for the farm icons
+                if (bounds.Contains(Game1.input.GetMouseState().Position))
+                {
+                    IClickableMenu.drawHoverText(b, hoverText, Game1.smallFont, 0, -100);
                 }
             }
             catch (Exception ex)
             {
                 Monitor.Log($"Failed in {nameof(DrawFarmIconPostfix)}:\n{ex}", LogLevel.Error);
             }
-            
         }
     }
 }
