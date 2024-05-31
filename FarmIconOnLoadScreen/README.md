@@ -15,10 +15,10 @@ This is an open source mod for Stardew Valley that displays the farm type on sav
 
 ## Releases
 ### 1.2.0
-#### Features
-- Farm icons now have tooltips when you hover over them
-#### Bug Fixes
-- Fixed issue with Meadowlands farm sometimes showing the wrong icon
+  ##### Features:
+  - Farm icons now have tooltips when you hover over them
+  ##### Bug Fixes:
+  - Fixed issue with Meadowlands farm sometimes showing the wrong icon
 
 ### 1.1.0
 - Now compatible with GenericModConfigMenu. The farm icons can now be default size or small size
