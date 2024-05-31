@@ -15,7 +15,7 @@ namespace FarmIconOnLoadScreen
 
         public override void Entry(IModHelper helper)
         {
-            // Read or Create config file
+            // Read or create config file
             Config = this.Helper.ReadConfig<ModConfig>();
 
             // Harmony patching
@@ -25,7 +25,7 @@ namespace FarmIconOnLoadScreen
                postfix: new HarmonyMethod(typeof(FarmIconPatch), nameof(FarmIconPatch.DrawFarmIconPostfix))
             );
 
-            // Setup Events
+            // Setup events
             helper.Events.GameLoop.SaveCreating += SaveFarmType;
             helper.Events.GameLoop.Saving += SaveFarmType;
             helper.Events.GameLoop.GameLaunched += SetupConfig;
@@ -39,15 +39,54 @@ namespace FarmIconOnLoadScreen
             try
             {
                 StardewValley.Mods.ModDataDictionary modData = Game1.player.modData;
+
+                // Add farm ID to farmer modData
                 if (!modData.ContainsKey("FarmIconOnLoadScreen"))
                 {
                     modData.Add("FarmIconOnLoadScreen", (Game1.whichFarm).ToString());
                 }
                 
+                // Add mod farm texture name to farmer modData
                 if ((Game1.whichFarm == 7) && (!modData.ContainsKey("ModFarmIconOnLoadScreen")))
                 {
                     ModFarmType farmType = Game1.whichModFarm;
                     modData.Add("ModFarmIconOnLoadScreen", farmType.IconTexture);
+                }
+
+                // Add farm name to farmer modData
+                if (!modData.ContainsKey("FarmIconNameOnLoadScreen"))
+                {
+                    string text = "";
+                    switch (Game1.whichFarm)
+                    {
+                        case 0:
+                            text = Game1.content.LoadString("Strings\\UI:Character_FarmStandard");
+                            break;
+                        case 1:
+                            text = Game1.content.LoadString("Strings\\UI:Character_FarmFishing");
+                            break;
+                        case 2:
+                            text = Game1.content.LoadString("Strings\\UI:Character_FarmForaging");
+                            break;
+                        case 3:
+                            text = Game1.content.LoadString("Strings\\UI:Character_FarmMining");
+                            break;
+                        case 4:
+                            text = Game1.content.LoadString("Strings\\UI:Character_FarmCombat");
+                            break;
+                        case 5:
+                            text = Game1.content.LoadString("Strings\\UI:Character_FarmFourCorners");
+                            break;
+                        case 6:
+                            text = Game1.content.LoadString("Strings\\UI:Character_FarmBeach");
+                            break;
+                        case 7:
+                            ModFarmType farmType = Game1.whichModFarm;
+                            text = Game1.content.LoadString(farmType.TooltipStringPath);
+                            break;
+                    }
+                    string[] array = text.Split('_', 2);
+                    modData.Add("FarmIconNameOnLoadScreen", array[0]);
                 }
             }
             catch (Exception ex)
@@ -66,7 +105,7 @@ namespace FarmIconOnLoadScreen
                 return;
             }
 
-            // Register Mod
+            // Register mod
             configMenu.Register(
                 mod: ModManifest,
                 reset: () =>
@@ -77,6 +116,7 @@ namespace FarmIconOnLoadScreen
                 save: () => Helper.WriteConfig(Config)
             );
 
+            // Add options
             configMenu.AddBoolOption(
                 mod: ModManifest,
                 getValue: () => Config.SmallIcons,

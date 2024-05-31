@@ -14,8 +14,14 @@ This is an open source mod for Stardew Valley that displays the farm type on sav
 [Nexus Mods Page](https://www.nexusmods.com/stardewvalley/mods/24344)
 
 ## Releases
+### 1.2.0
+#### Features
+- Farm icons now have tooltips when you hover over them
+#### Bug Fixes
+- Fixed issue with Meadowlands farm sometimes showing the wrong icon
+
 ### 1.1.0
-- Now compatible with GenericModConfigMenu. The farm icons can now be default size or small size.
+- Now compatible with GenericModConfigMenu. The farm icons can now be default size or small size
 
 ### 1.0.1
 - Fixed issue with farm type key being added to modData after every save instead of only once
