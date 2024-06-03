@@ -7,7 +7,7 @@ namespace FarmIconOnLoadScreen
 
         public ModConfig()
         {
-            this.SmallIcons = false;
+            SmallIcons = false;
         }
 
     }

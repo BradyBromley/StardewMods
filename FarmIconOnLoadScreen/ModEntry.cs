@@ -16,10 +16,10 @@ namespace FarmIconOnLoadScreen
         public override void Entry(IModHelper helper)
         {
             // Read or create config file
-            Config = this.Helper.ReadConfig<ModConfig>();
+            Config = Helper.ReadConfig<ModConfig>();
 
             // Harmony patching
-            var harmony = new Harmony(this.ModManifest.UniqueID);
+            var harmony = new Harmony(ModManifest.UniqueID);
             harmony.Patch(
                original: AccessTools.Method(typeof(StardewValley.Menus.LoadGameMenu.SaveFileSlot), nameof(StardewValley.Menus.LoadGameMenu.SaveFileSlot.Draw)),
                postfix: new HarmonyMethod(typeof(FarmIconPatch), nameof(FarmIconPatch.DrawFarmIconPostfix))
@@ -99,7 +99,7 @@ namespace FarmIconOnLoadScreen
         private void SetupConfig(object? sender, EventArgs e)
         {
             // Get GenericModConfigMenu API
-            var configMenu = this.Helper.ModRegistry.GetApi<IGenericModConfigMenuApi>("spacechase0.GenericModConfigMenu");
+            var configMenu = Helper.ModRegistry.GetApi<IGenericModConfigMenuApi>("spacechase0.GenericModConfigMenu");
             if (configMenu is null)
             {
                 return;
@@ -108,11 +108,7 @@ namespace FarmIconOnLoadScreen
             // Register mod
             configMenu.Register(
                 mod: ModManifest,
-                reset: () =>
-                {
-                    Config = new ModConfig();
-                    Helper.WriteConfig(Config);
-                },
+                reset: () => Config.SmallIcons = false,
                 save: () => Helper.WriteConfig(Config)
             );
 

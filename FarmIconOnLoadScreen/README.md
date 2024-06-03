@@ -14,6 +14,9 @@ This is an open source mod for Stardew Valley that displays the farm type on sav
 [Nexus Mods Page](https://www.nexusmods.com/stardewvalley/mods/24344)
 
 ## Releases
+### 1.2.1
+  - Default button in GMCM now works properly
+
 ### 1.2.0
   ##### Features:
   - Farm icons now have tooltips when you hover over them
