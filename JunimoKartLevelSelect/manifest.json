@@ -6,5 +6,5 @@
   "UniqueID": "b1rdyw1rdy.JunimoKartLevelSelect",
   "EntryDll": "JunimoKartLevelSelect.dll",
   "MinimumApiVersion": "3.0.0",
-  "UpdateKeys": []
+  "UpdateKeys": [ "Nexus:25140" ]
 }
