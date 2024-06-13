@@ -11,6 +11,7 @@ This is an open source mod for Stardew Valley that lets you select levels in jun
 3. Run the game using SMAPI
 
 ## Mirrors
+[Nexus Mods Page](https://www.nexusmods.com/stardewvalley/mods/25140)
 
 ## Releases
 ### 1.0.0
