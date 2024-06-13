@@ -1,4 +1,4 @@
-# FarmIconOnLoadScreen
+# JunimoKartLevelSelect
 This is an open source mod for Stardew Valley that lets you select levels in junimo kart progress mode after you have reached them for the first time.
 
 ## Requirements
@@ -14,5 +14,7 @@ This is an open source mod for Stardew Valley that lets you select levels in jun
 [Nexus Mods Page](https://www.nexusmods.com/stardewvalley/mods/25140)
 
 ## Releases
+### 1.0.1
+- Added nexus link to manifest.json
 ### 1.0.0
 - Initial upload
