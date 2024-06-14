@@ -45,48 +45,65 @@ namespace FarmIconOnLoadScreen
                 {
                     modData.Add("FarmIconOnLoadScreen", (Game1.whichFarm).ToString());
                 }
-                
-                // Add mod farm texture name to farmer modData
-                if ((Game1.whichFarm == 7) && (!modData.ContainsKey("ModFarmIconOnLoadScreen")))
+                else
                 {
-                    ModFarmType farmType = Game1.whichModFarm;
-                    modData.Add("ModFarmIconOnLoadScreen", farmType.IconTexture);
+                    modData["FarmIconOnLoadScreen"] = (Game1.whichFarm).ToString();
+                }
+
+                // Add mod farm texture name to farmer modData
+                if (Game1.whichFarm == 7)
+                {
+                    if (!modData.ContainsKey("ModFarmIconOnLoadScreen"))
+                    {
+                        ModFarmType farmType = Game1.whichModFarm;
+                        modData.Add("ModFarmIconOnLoadScreen", farmType.IconTexture);
+                    }
+                    else
+                    {
+                        ModFarmType farmType = Game1.whichModFarm;
+                        modData["ModFarmIconOnLoadScreen"] = farmType.IconTexture;
+                    }
                 }
 
                 // Add farm name to farmer modData
+                string text = "";
+                switch (Game1.whichFarm)
+                {
+                    case 0:
+                        text = Game1.content.LoadString("Strings\\UI:Character_FarmStandard");
+                        break;
+                    case 1:
+                        text = Game1.content.LoadString("Strings\\UI:Character_FarmFishing");
+                        break;
+                    case 2:
+                        text = Game1.content.LoadString("Strings\\UI:Character_FarmForaging");
+                        break;
+                    case 3:
+                        text = Game1.content.LoadString("Strings\\UI:Character_FarmMining");
+                        break;
+                    case 4:
+                        text = Game1.content.LoadString("Strings\\UI:Character_FarmCombat");
+                        break;
+                    case 5:
+                        text = Game1.content.LoadString("Strings\\UI:Character_FarmFourCorners");
+                        break;
+                    case 6:
+                        text = Game1.content.LoadString("Strings\\UI:Character_FarmBeach");
+                        break;
+                    case 7:
+                        ModFarmType farmType = Game1.whichModFarm;
+                        text = Game1.content.LoadString(farmType.TooltipStringPath);
+                        break;
+                }
+                string[] array = text.Split('_', 2);
+
                 if (!modData.ContainsKey("FarmIconNameOnLoadScreen"))
                 {
-                    string text = "";
-                    switch (Game1.whichFarm)
-                    {
-                        case 0:
-                            text = Game1.content.LoadString("Strings\\UI:Character_FarmStandard");
-                            break;
-                        case 1:
-                            text = Game1.content.LoadString("Strings\\UI:Character_FarmFishing");
-                            break;
-                        case 2:
-                            text = Game1.content.LoadString("Strings\\UI:Character_FarmForaging");
-                            break;
-                        case 3:
-                            text = Game1.content.LoadString("Strings\\UI:Character_FarmMining");
-                            break;
-                        case 4:
-                            text = Game1.content.LoadString("Strings\\UI:Character_FarmCombat");
-                            break;
-                        case 5:
-                            text = Game1.content.LoadString("Strings\\UI:Character_FarmFourCorners");
-                            break;
-                        case 6:
-                            text = Game1.content.LoadString("Strings\\UI:Character_FarmBeach");
-                            break;
-                        case 7:
-                            ModFarmType farmType = Game1.whichModFarm;
-                            text = Game1.content.LoadString(farmType.TooltipStringPath);
-                            break;
-                    }
-                    string[] array = text.Split('_', 2);
                     modData.Add("FarmIconNameOnLoadScreen", array[0]);
+                }
+                else
+                {
+                    modData["FarmIconNameOnLoadScreen"] = array[0];
                 }
             }
             catch (Exception ex)
