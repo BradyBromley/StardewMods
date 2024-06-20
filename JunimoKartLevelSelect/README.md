@@ -14,6 +14,8 @@ This is an open source mod for Stardew Valley that lets you select levels in jun
 [Nexus Mods Page](https://www.nexusmods.com/stardewvalley/mods/25140)
 
 ## Releases
+### 1.0.2
+- Correct errors are now generated depending on where the mod fails
 ### 1.0.1
 - Added nexus link to manifest.json
 ### 1.0.0
