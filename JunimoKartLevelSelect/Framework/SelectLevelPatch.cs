@@ -129,7 +129,7 @@ namespace JunimoKartLevelSelect.Framework
             }
             catch (Exception ex)
             {
-                Monitor.Log($"Failed in {nameof(AnswerDialogueActionPrefix)}:\n{ex}", LogLevel.Error);
+                Monitor.Log($"Failed in {nameof(ShowMapPostfix)}:\n{ex}", LogLevel.Error);
             }
         }
     }
