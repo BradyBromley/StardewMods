@@ -13,3 +13,8 @@ A collection of mods for Stardew Valley using SMAPI.
   - A mod that lets you select levels in Junimo Kart progress mode after they have been reached.
   - [Source Code](https://github.com/BradyBromley/StardewMods/tree/main/JunimoKartLevelSelect)
   - [Nexus Mods Page](https://www.nexusmods.com/stardewvalley/mods/25140)
+
+- JunimoKartPrizes
+  - a mod that adds prizes for Junimo Kart that can be redeemed based on the coins and fruit collected.
+  - [Source Code](https://github.com/BradyBromley/StardewMods/tree/main/JunimoKartPrizes)
+  - [Nexus Mods Page](https://www.nexusmods.com/stardewvalley/mods/25968)
