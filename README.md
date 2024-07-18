@@ -18,3 +18,8 @@ A collection of mods for Stardew Valley using SMAPI.
   - a mod that adds prizes for Junimo Kart that can be redeemed based on the coins and fruit collected.
   - [Source Code](https://github.com/BradyBromley/StardewMods/tree/main/JunimoKartPrizes)
   - [Nexus Mods Page](https://www.nexusmods.com/stardewvalley/mods/25968)
+
+- PrairieKingLevelSelect
+  - A mod that lets you select levels in Journey of the Prairie King after they have been reached.
+  - [Source Code](https://github.com/BradyBromley/StardewMods/tree/main/PrairieKingLevelSelect)
+  - [Nexus Mods Page](https://www.nexusmods.com/stardewvalley/mods/26183)
