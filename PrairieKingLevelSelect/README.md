@@ -11,7 +11,10 @@ This is an open source mod for Stardew Valley that lets you select levels in Jou
 3. Run the game using SMAPI
 
 ## Mirrors
+[Nexus Mods Page](https://www.nexusmods.com/stardewvalley/mods/26183/)
 
 ## Releases
+### 1.0.1
+- Added Mirrors
 ### 1.0.0
 - Initial upload
