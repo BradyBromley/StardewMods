@@ -1,7 +1,7 @@
 {
   "Name": "Junimo Kart Prizes",
   "Author": "b1rdyw1rdy",
-  "Version": "1.0.1",
+  "Version": "1.1.0",
   "Description": "Redeem prizes based on coins and fruit collected in Junimo Kart",
   "UniqueID": "b1rdyw1rdy.JunimoKartPrizes",
   "EntryDll": "JunimoKartPrizes.dll",
