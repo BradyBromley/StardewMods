@@ -16,7 +16,7 @@ namespace JunimoKartPrizes.Framework
             new Prize { itemID = "(O)382", itemQuantity = 5 }, // Coal
             new Prize { itemID = "(O)388", itemQuantity = 25 }, // Wood
             new Prize { itemID = "(O)390", itemQuantity = 25 }, // Stone
-            new Prize { itemID = "(O)535", itemQuantity = 1 }, // Geode
+            new Prize { itemID = "(O)535", itemQuantity = 2 }, // Geode
             new Prize { itemID = "(O)709", itemQuantity = 5 }, // Hardwood
 
             new Prize { itemID = "(O)495", itemQuantity = 5 }, // Spring Seeds
@@ -32,8 +32,8 @@ namespace JunimoKartPrizes.Framework
             new Prize { itemID = "(O)369", itemQuantity = 3 }, // Quality Fertilizer
             new Prize { itemID = "(O)371", itemQuantity = 3 }, // Quality Retaining Soil
             new Prize { itemID = "(O)380", itemQuantity = 5 }, // Iron Ore
-            new Prize { itemID = "(O)536", itemQuantity = 1 }, // Frozen Geode
-            new Prize { itemID = "(O)537", itemQuantity = 1 }, // Magma Geode
+            new Prize { itemID = "(O)536", itemQuantity = 2 }, // Frozen Geode
+            new Prize { itemID = "(O)537", itemQuantity = 2 }, // Magma Geode
             new Prize { itemID = "(O)688", itemQuantity = 1 }, // Warp Totem: Farm
             new Prize { itemID = "(O)689", itemQuantity = 1 }, // Warp Totem: Mountains
             new Prize { itemID = "(O)690", itemQuantity = 1 }, // Warp Totem: Beach
@@ -69,11 +69,12 @@ namespace JunimoKartPrizes.Framework
 
         public static Prize[] epicItems { get; set; } = new Prize[]
         {
-            new Prize { itemID = "(O)60", itemQuantity = 1 }, // Emerald
-            new Prize { itemID = "(O)62", itemQuantity = 1 }, // Aquamarine
-            new Prize { itemID = "(O)64", itemQuantity = 1 }, // Ruby
-            new Prize { itemID = "(O)66", itemQuantity = 1 }, // Amethyst
-            new Prize { itemID = "(O)68", itemQuantity = 1 }, // Topaz
+            new Prize { itemID = "(O)60", itemQuantity = 2 }, // Emerald
+            new Prize { itemID = "(O)62", itemQuantity = 2 }, // Aquamarine
+            new Prize { itemID = "(O)64", itemQuantity = 2 }, // Ruby
+            new Prize { itemID = "(O)66", itemQuantity = 2 }, // Amethyst
+            new Prize { itemID = "(O)68", itemQuantity = 2 }, // Topaz
+            new Prize { itemID = "(O)288", itemQuantity = 1 }, // Mega Bomb
             new Prize { itemID = "(O)384", itemQuantity = 5 }, // Gold Ore
             new Prize { itemID = "(O)486", itemQuantity = 1 }, // Starfruit Seeds
             new Prize { itemID = "(O)499", itemQuantity = 1 }, // Ancient Seeds
@@ -82,19 +83,18 @@ namespace JunimoKartPrizes.Framework
             new Prize { itemID = "(O)919", itemQuantity = 3 }, // Deluxe Fertilizer
             new Prize { itemID = "(O)920", itemQuantity = 3 }, // Deluxe Retaining Soil
 
-            new Prize { itemID = "(O)176", itemQuantity = 3 }, // White Egg
-            new Prize { itemID = "(O)180", itemQuantity = 3 }, // Brown Egg
-            new Prize { itemID = "(O)184", itemQuantity = 2 }, // Milk
-            new Prize { itemID = "(O)430", itemQuantity = 1 }, // Truffle
+            new Prize { itemID = "(O)174", itemQuantity = 2 }, // Large White Egg
+            new Prize { itemID = "(O)182", itemQuantity = 2 }, // Large Brown Egg
+            new Prize { itemID = "(O)186", itemQuantity = 2 }, // Large Milk
+            new Prize { itemID = "(O)430", itemQuantity = 2 }, // Truffle
             new Prize { itemID = "(O)436", itemQuantity = 2 }, // Goat Milk
-            new Prize { itemID = "(O)440", itemQuantity = 1 }, // Wool
-            new Prize { itemID = "(O)440", itemQuantity = 3 }, // Duck Egg
-            new Prize { itemID = "(O)444", itemQuantity = 1 }, // Duck Feather
+            new Prize { itemID = "(O)440", itemQuantity = 2 }, // Wool
+            new Prize { itemID = "(O)440", itemQuantity = 2 }, // Duck Egg
+            new Prize { itemID = "(O)444", itemQuantity = 2 }, // Duck Feather
             new Prize { itemID = "(O)446", itemQuantity = 1 }, // Rabbit's Foot
 
-            new Prize { itemID = "(B)508", itemQuantity = 1 }, // Combat Boots
-            new Prize { itemID = "(B)509", itemQuantity = 1 }, // Tundra Boots
-            new Prize { itemID = "(B)510", itemQuantity = 1 }, // Thermal Boots
+            new Prize { itemID = "(B)511", itemQuantity = 1 }, // Dark Boots
+            new Prize { itemID = "(B)512", itemQuantity = 1 }, // Firewalker Boots
 
             new Prize { itemID = "(O)MysteryBox", itemQuantity = 2 } // Mystery Box
         };
@@ -111,12 +111,10 @@ namespace JunimoKartPrizes.Framework
             new Prize { itemID = "(O)533", itemQuantity = 1 }, // Emerald Ring
             new Prize { itemID = "(O)534", itemQuantity = 1 }, // Ruby Ring
 
-            new Prize { itemID = "(W)10", itemQuantity = 1 }, // Claymore
-            new Prize { itemID = "(W)15", itemQuantity = 1 }, // Forest Sword
-            new Prize { itemID = "(W)18", itemQuantity = 1 }, // Burglar's Shank
-            new Prize { itemID = "(W)19", itemQuantity = 1 }, // Shadow Dagger
-            new Prize { itemID = "(W)27", itemQuantity = 1 }, // Wood Mallet
-            new Prize { itemID = "(W)26", itemQuantity = 1 } // Lead Rod
+            new Prize { itemID = "(W)3", itemQuantity = 1 }, // Holy Blade
+            new Prize { itemID = "(W)28", itemQuantity = 1 }, // The Slammer
+            new Prize { itemID = "(W)45", itemQuantity = 1 }, // Wicked Kris
+            new Prize { itemID = "(W)52", itemQuantity = 1 } // Tempered Broadsword
         };
     }
 }

@@ -14,6 +14,8 @@ This is an open source mod for Stardew Valley That adds prizes for Junimo Kart t
 [Nexus Mods Page](https://www.nexusmods.com/stardewvalley/mods/25968/)
 
 ## Releases
+### 1.1.0
+- Improved prizes
 ### 1.0.1
 - Added mirrors
 ### 1.0.0
