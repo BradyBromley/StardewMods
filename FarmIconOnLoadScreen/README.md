@@ -35,3 +35,5 @@ This is an open source mod for Stardew Valley that displays the farm type on sav
 ### 1.0.0
 - Initial upload
 
+## Images
+![alt text](images/SmallIcons.png)
