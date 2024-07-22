@@ -20,3 +20,7 @@ This is an open source mod for Stardew Valley That adds prizes for Junimo Kart t
 - Added mirrors
 ### 1.0.0
 - Initial upload
+
+## Images
+![alt text](images/JunimoKartPrizesFirstDialogue.png)
+![alt text](images/JunimoKartPrizesSecondDialogue.png)

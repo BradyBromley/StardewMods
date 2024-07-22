@@ -20,3 +20,6 @@ This is an open source mod for Stardew Valley that lets you select levels in jun
 - Added nexus link to manifest.json
 ### 1.0.0
 - Initial upload
+
+## Images
+![alt text](images/JunimoKartLevelSelect.png)
