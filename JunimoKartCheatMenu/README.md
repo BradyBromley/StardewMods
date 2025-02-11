@@ -11,9 +11,11 @@ This is an open source mod for Stardew Valley that lets you use cheats in junimo
 3. Run the game using SMAPI
 
 ## Mirrors
-[Nexus Mods Page]()
+[Nexus Mods Page](https://www.nexusmods.com/stardewvalley/mods/31634)
 
 ## Releases
+### 1.0.1
+- Added nexus link to manifest.json
 ### 1.0.0
 - Initial upload
 
