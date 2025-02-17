@@ -14,6 +14,8 @@ This is an open source mod for Stardew Valley that lets you use cheats in junimo
 [Nexus Mods Page](https://www.nexusmods.com/stardewvalley/mods/31634)
 
 ## Releases
+### 1.0.2
+- Fixed Formatting issue
 ### 1.0.1
 - Added nexus link to manifest.json
 ### 1.0.0

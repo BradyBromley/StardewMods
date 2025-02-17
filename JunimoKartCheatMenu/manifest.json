@@ -1,7 +1,7 @@
 {
   "Name": "Junimo Kart Cheat Menu",
   "Author": "b1rdyw1rdy",
-  "Version": "1.0.1",
+  "Version": "1.0.2",
   "Description": "Add cheats to Junimo Kart",
   "UniqueID": "b1rdyw1rdy.JunimoKartCheatMenu",
   "EntryDll": "JunimoKartCheatMenu.dll",
